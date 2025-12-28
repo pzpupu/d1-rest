@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "tiktok-monitor-database",
+          "database_id": "739ef2c7-017c-42fc-be69-bed18bb6999c"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "d1fcf438e75a46c6972341978dba56d6",
+            "binding": "SECRET",
+            "secret_name": "d1-rest"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
